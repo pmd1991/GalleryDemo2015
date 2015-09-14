@@ -43,7 +43,7 @@ function initializeMap(locations) {
         });
 
         google.maps.event.addListener(marker, 'click', function () {
-            location.href = "/index.html#/gallery/" + id;
+            location.href = "index.html#/gallery/" + id;
         });
 
         // this is where the pin actually gets added to the map.

@@ -1,0 +1,75 @@
+/*!
+ * Start Bootstrap - Thumbnail Gallery HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* for bootstrap-ui */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+.navButtons {
+    margin-right: 15px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.brand-spacer {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    margin-left: -8px;
+}
+
+.brand-spacer:hover,
+.brand-spacer:focus {
+    text-decoration: none;
+}
+
+.brand-spacer > img {
+    display: block;
+}
+
+.navbar-default .brand-spacer {
+    color: #777;
+}
+
+.navbar-default .brand-spacer:hover,
+.navbar-default .brand-spacer:focus {
+    color: #5e5e5e;
+    background-color: transparent;
+}
+
+.navbar-inverse .brand-spacer {
+    color: #9d9d9d;
+}
+
+.navbar-inverse .brand-spacer:hover,
+.navbar-inverse .brand-spacer:focus {
+    color: #fff;
+    background-color: transparent;
+}
+
+.align-sort-btn {
+    margin-top: 7px;
+    margin-right: 5px;
+}
+
+#map {
+    width: 100%;
+    height: 200px;
+}
+
+@media(min-width:767px) {
+    #map {
+        height: 400px;
+    }
+}
+

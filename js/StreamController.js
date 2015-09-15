@@ -5,7 +5,7 @@
         .controller("StreamController", ["$scope", "ImageData",
             function($scope, ImageData) {
                 $scope.currentPage = 1;
-                $scope.perPage = 12;
+                $scope.perPage = 10;
                 $scope.files = ImageData.getAllMediumOrderDesc();
 
                 var updateImages = function(begin, end) {

@@ -2,7 +2,7 @@
 
 ## Introduction
 This application is a photo gallery with a map of album locations.
-When one of the map markers are clicked the photos for that album will
+When one of the map markers is clicked the photos for that album will
 be displayed. When one of the album names is clicked the album will be
 shown. Clicking on one of the pictures in an album displays an image
 carousel.

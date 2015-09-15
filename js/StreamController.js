@@ -4,14 +4,26 @@
     angular.module("Demo")
         .controller("StreamController", ["$scope", "ImageData",
             function($scope, ImageData) {
-                $scope.imageArray = [];
+                $scope.currentPage = 1;
+                $scope.perPage = 12;
+                $scope.files = ImageData.getAllMediumOrderDesc();
 
-                var stream = ImageData.getStream(0, 12);
+                var updateImages = function(begin, end) {
+                    $scope.imageArray = [];
+                    for (var i = begin; i < end; i++) {
+                        $scope.imageArray.push({
+                            src: $scope.files[i]
+                        });
+                    }
+                };
 
-                for (var i = 0; i < stream.length; i++) {
-                    $scope.imageArray.push({
-                        src: stream[i]
-                    });
-                }
+                $scope.update = function () {
+                    var begin = (($scope.currentPage - 1) * $scope.perPage),
+                        end = Math.min(begin + $scope.perPage, $scope.files.length);
+
+                    updateImages(begin, end);
+                };
+
+                updateImages(0, $scope.perPage);
             }]);
 }());

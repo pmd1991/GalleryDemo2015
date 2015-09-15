@@ -6,4 +6,11 @@
             </a>
         </div>
     </div>
+    <pagination
+            ng-model="currentPage"
+            total-items="files.length"
+            items-per-page="perPage"
+            boundary-links="true"
+            ng-change="update()">
+    </pagination>
 </div>

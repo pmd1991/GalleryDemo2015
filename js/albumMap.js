@@ -1,5 +1,3 @@
-var map;    // declares a global map variable
-
 function initializeMap(locations) {
 
     var mapOptions = {
@@ -9,8 +7,6 @@ function initializeMap(locations) {
     // This next line makes `map` a new Google Map JavaScript Object and attaches it to
     // <div id="map">, which is appended as part of an exercise late in the course.
     map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
-    console.log("found map = " + map);
 
     /*
      createMapMarker(placeData) reads Google Places search results to create map pins.
@@ -24,9 +20,6 @@ function initializeMap(locations) {
         var lon = placeData.latlong[1];  // longitude from the place service
         var name = placeData.name;   // name of the place from the place service
         var bounds = window.mapBounds;            // current boundaries of the map window
-
-        console.log("creating map marker at" + lat + lon + "bounds = " + bounds);
-
 
         // marker is an object with additional data about the pin for a single location
         var marker = new google.maps.Marker({
@@ -61,14 +54,10 @@ function initializeMap(locations) {
      */
     function pinPoster(locations) {
 
-        console.log("pin posting");
-
         // Iterates through the array of locations, creates a search object for each location
         for (var i = 0; i < locations.length; i++) {
 
             createMapMarker(locations[i], i);
-
-            console.log("searching");
         }
     }
 
@@ -80,5 +69,4 @@ function initializeMap(locations) {
     // the locations array
     pinPoster(locations);
 
-    console.log("Finished init");
 }

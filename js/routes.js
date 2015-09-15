@@ -17,7 +17,7 @@
                 .when('/gallery/:id/:photoId', {
                     templateUrl: 'template/carousel.html',
                     controller: 'MyCarouselController',
-                    excludeBreadcrumb: true
+                    label: " "
                 })
                 .when('/about/', {
                     templateUrl: 'template/about.html',

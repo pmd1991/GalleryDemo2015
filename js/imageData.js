@@ -3,6 +3,8 @@ angular.module('Demo').factory('ImageData', function() {
 
     console.log("recreating image data");
 
+    var lastSingleImageIndex = null;
+
     var getPhotoList = function(that, albumId, suffix) {
         var result = [];
         var files = [];
@@ -230,6 +232,12 @@ angular.module('Demo').factory('ImageData', function() {
             result.reverse();
 
             return result;
+        },
+        setSingleImageIndex: function(img) {
+            lastSingleImageIndex = img;
+        },
+        getSingleImageIndex: function() {
+            return lastSingleImageIndex;
         }
     };
 });

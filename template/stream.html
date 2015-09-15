@@ -1,7 +1,7 @@
 <div class="row">
     <div ng-repeat="image in imageArray">
         <div class="col-lg-12 col-md-12 col-xs-12">
-            <a href="#{{image.link}}">
+            <a href="#{{image.link}}" ng-click="imageClick($index)">
                 <img class="img-responsive" src="{{image.src}}" alt="Gallery Image">
             </a>
         </div>

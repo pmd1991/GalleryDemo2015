@@ -4,8 +4,17 @@
     angular.module("Demo")
         .controller("StreamController", ["$scope", "ImageData",
             function($scope, ImageData) {
-                $scope.currentPage = 1;
+                console.log("creating controller");
+
                 $scope.perPage = 10;
+
+                if (ImageData.getSingleImageIndex()) {
+                    $scope.currentPage = Math.floor(ImageData.getSingleImageIndex() / $scope.perPage) + 1;
+                }
+                else {
+                    $scope.currentPage = 1;
+                }
+
                 $scope.files = ImageData.getAllMediumOrderDesc();
 
                 var updateImages = function(begin, end) {
@@ -18,13 +27,21 @@
                     }
                 };
 
+                var beginIndex = function() {
+                    return (($scope.currentPage - 1) * $scope.perPage);
+                };
+
                 $scope.update = function () {
-                    var begin = (($scope.currentPage - 1) * $scope.perPage),
+                    var begin = beginIndex(),
                         end = Math.min(begin + $scope.perPage, $scope.files.length);
 
                     updateImages(begin, end);
                 };
 
-                updateImages(0, $scope.perPage);
+                $scope.imageClick = function(index) {
+                    ImageData.setSingleImageIndex(beginIndex() + index);
+                };
+
+                $scope.update();
             }]);
 }());

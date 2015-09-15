@@ -24,10 +24,15 @@
                     controller: 'AboutController',
                     label: "About"
                 })
-                .when('/stream/', {
+                .when('/stream', {
                     templateUrl: 'template/stream.html',
                     controller: 'StreamController',
                     label: "Stream"
+                })
+                .when('/stream/single/:id', {
+                    templateUrl: 'template/streamSingle.html',
+                    controller: 'StreamSingleController',
+                    label: " "
                 })
                 .otherwise({
                     templateUrl: 'template/about.html',

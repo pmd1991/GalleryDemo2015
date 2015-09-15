@@ -12,7 +12,8 @@
                     $scope.imageArray = [];
                     for (var i = begin; i < end; i++) {
                         $scope.imageArray.push({
-                            src: $scope.files[i]
+                            src: $scope.files[i],
+                            link: "/stream/single/" + i
                         });
                     }
                 };

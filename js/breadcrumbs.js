@@ -75,8 +75,8 @@
                                         .keys(pathObj)
                                         .map(function(k) { return pathObj[k].originalPath;  })
                                         .join('/') || '/';
-
-                                if (routes[originalPath] &&
+                                
+                                    if (routes[originalPath] &&
                                     (routes[originalPath].label || param) &&
                                     !routes[originalPath].excludeBreadcrumb) {
                                     _this.breadcrumbs.push({

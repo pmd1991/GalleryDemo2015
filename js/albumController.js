@@ -15,8 +15,6 @@
                 });
             }
             initializeMap(names);
-
-            console.log("done with album controller");
         }]);
 }());
 

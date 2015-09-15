@@ -221,11 +221,13 @@ angular.module('Demo').factory('ImageData', function() {
 
             return result;
         },
-        getStream: function (rangeBegin, rangeEnd) {
+        getAllMediumOrderDesc: function () {
             var result = getPhotoList(this, '0', "-640x426medium.jpg");
 
             result = result.concat(getPhotoList(this, '1', "-640x426medium.jpg"));
             result = result.concat(getPhotoList(this, '2', "-640x426medium.jpg"));
+
+            result.reverse();
 
             return result;
         }
